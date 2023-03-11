@@ -16,7 +16,7 @@ class ShoeListViewModel : ViewModel() {
         _shoes.value = mutableListOf()
     }
 
-    fun onNewShoeAdded(shoe: Shoe) {
+    fun addNewShoe(shoe: Shoe) {
         _shoes.value?.add(shoe)
     }
 }
