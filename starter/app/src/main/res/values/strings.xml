@@ -9,4 +9,7 @@
     <string name="welcome_to_shoe">Welcome to Shoe!</string>
     <string name="see_the_instructions">See the instructions</string>
     <string name="login_error_toast">Please, fill your email and password</string>
+    <string name="text_instructions">In the following screen you will be able to see all shoes available in store. You can also add new shoes items.</string>
+    <string name="button_go_to_shoe_list">Show me the shoes!</string>
+    <string name="instructions_title">Instructions</string>
 </resources>
