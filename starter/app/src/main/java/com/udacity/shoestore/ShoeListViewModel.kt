@@ -19,9 +19,4 @@ class ShoeListViewModel : ViewModel() {
     fun onNewShoeAdded(shoe: Shoe) {
         _shoes.value?.add(shoe)
     }
-
-    fun onShoeUpdated(index: Int, shoe: Shoe) {
-        _shoes.value?.let { it[index] = shoe }
-    }
-
 }
