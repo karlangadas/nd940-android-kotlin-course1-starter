@@ -12,4 +12,5 @@
     <string name="text_instructions">In the following screen you will be able to see all shoes available in store. You can also add new shoes items.</string>
     <string name="button_go_to_shoe_list">Show me the shoes!</string>
     <string name="instructions_title">Instructions</string>
+    <string name="plus_fab_content_description">Add new shoe</string>
 </resources>
