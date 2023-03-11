@@ -5,4 +5,8 @@
     <string name="password">Password</string>
     <string name="email">Email</string>
     <string name="shoe_store_name">Shoe!</string>
+    <string name="welcome_to_this_awesome_shoe_store_app_here_you_will_find_a_list_of_shoes_so_you_can_keep_track_of_your_favourite_ones_enjoy">Welcome to this awesome Shoe Store App! Here you will find a list of Shoes so you can keep track of your favourite ones. Click the button to find out more about this show world. Enjoy!</string>
+    <string name="welcome_to_shoe">Welcome to Shoe!</string>
+    <string name="see_the_instructions">See the instructions</string>
+    <string name="login_error_toast">Please, fill your email and password</string>
 </resources>
