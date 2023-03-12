@@ -27,12 +27,12 @@ class ShoeDetailFragment : Fragment() {
         shoe = Shoe("", .0, "", "")
         binding.detail = this
         viewModel = ViewModelProvider(requireActivity()).get(ShoeListViewModel::class.java)
-        binding.buttonCancel.setOnClickListener { activity?.onBackPressed() }
-        binding.buttonSave.setOnClickListener {
+        binding.buttonCancel.setOnClickListener { view -> view.findNavController().popBackStack() }
+        binding.buttonSave.setOnClickListener { view ->
             if (binding.editTextShoeSize.text != null) {
                 shoe.size = binding.editTextShoeSize.text.toString().toDouble()
                 viewModel.addNewShoe(shoe)
-                activity?.onBackPressed()
+                view.findNavController().popBackStack()
             }
         }
         return binding.root
