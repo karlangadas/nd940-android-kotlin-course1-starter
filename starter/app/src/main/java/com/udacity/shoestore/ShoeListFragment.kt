@@ -13,6 +13,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import com.udacity.shoestore.databinding.FragmentShoeListBinding
+import com.udacity.shoestore.databinding.ShoeItemBinding
 import com.udacity.shoestore.models.Shoe
 import kotlinx.android.synthetic.main.fragment_shoe_detail.view.*
 import kotlinx.android.synthetic.main.fragment_shoe_list.view.*
@@ -35,7 +36,7 @@ class ShoeListFragment : Fragment() {
         viewModel.shoes.observe(viewLifecycleOwner, Observer { shoes ->
             if (shoes.size > 0) {
                 for (shoe in shoes) {
-                    binding.shoeList.addView(inflateShoeItemView(shoe))
+                    binding.shoeList.addView(inflateShoeItemView(shoe, inflater))
                 }
             }
         })
@@ -47,12 +48,14 @@ class ShoeListFragment : Fragment() {
         return binding.root
     }
 
-    private fun inflateShoeItemView(shoe: Shoe): View {
-        val shoeCardItem: View = View.inflate(context, R.layout.shoe_item, null)
-        shoeCardItem.textShoeName.text = "Name: ${shoe.name}"
-        shoeCardItem.textShoeSize.text = "Size: ${shoe.size}"
-        shoeCardItem.textCompany.text = "Company: ${shoe.company}"
-        shoeCardItem.textShoeDescription.text = "Description: ${shoe.description}"
+    private fun inflateShoeItemView(shoe: Shoe, inflater: LayoutInflater): View {
+        val shoeItemBinding: ShoeItemBinding = DataBindingUtil.inflate(
+            inflater, R.layout.shoe_item, null, false
+        )
+        shoeItemBinding.textShoeName.text = "Name: ${shoe.name}"
+        shoeItemBinding.textShoeSize.text = "Size: ${shoe.size}"
+        shoeItemBinding.textCompany.text = "Company: ${shoe.company}"
+        shoeItemBinding.textShoeDescription.text = "Description: ${shoe.description}"
 
         context?.resources?.getDimensionPixelSize(R.dimen.shoe_card_item_margin_bottom)
             ?.let {
@@ -61,9 +64,9 @@ class ShoeListFragment : Fragment() {
                     ViewGroup.LayoutParams.WRAP_CONTENT
                 )
                 layoutParams.setMargins(0, 0, 0, it)
-                shoeCardItem.layoutParams = layoutParams
+                shoeItemBinding.root.layoutParams = layoutParams
             }
 
-        return shoeCardItem
+        return shoeItemBinding.root
     }
 }
