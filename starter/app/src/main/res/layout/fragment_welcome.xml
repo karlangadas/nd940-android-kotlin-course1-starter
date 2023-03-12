@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.udacity.shoestore.WelcomeFragment">
 
+    <!-- Why constraintLayout? Although the distribution of the items inside of these layout is "linear". I wanted each view to have a vertical different vertical constrain in order to sho the button at the bottom and the other two components at the top.-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

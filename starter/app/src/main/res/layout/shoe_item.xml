@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Why constraintLayout? Because we have an icon element and constraintLayout allows to align it in its desired position without adding a nested layout-->
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -12,27 +13,27 @@
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginHorizontal="8dp"
         app:srcCompat="@android:drawable/star_big_on" />
 
     <TextView
         android:id="@+id/textShoeName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text="@string/shoe_name_hint"
         app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@string/shoe_name_hint" />
 
     <TextView
         android:id="@+id/textCompany"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text="@string/company_hint"
         app:layout_constraintStart_toStartOf="@+id/textShoeName"
-        app:layout_constraintTop_toBottomOf="@+id/textShoeName" />
+        app:layout_constraintTop_toBottomOf="@+id/textShoeName"
+        tools:text="@string/company_hint" />
 
     <TextView
         android:id="@+id/textShoeSize"
@@ -46,9 +47,9 @@
         android:id="@+id/textShoeDescription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text="@string/description_hint"
         app:layout_constraintStart_toStartOf="@+id/textShoeName"
-        app:layout_constraintTop_toBottomOf="@+id/textShoeSize" />
+        app:layout_constraintTop_toBottomOf="@+id/textShoeSize"
+        tools:text="@string/description_hint" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -11,6 +11,7 @@
             type="com.udacity.shoestore.ShoeDetailFragment" />
     </data>
 
+    <!-- Why constraintLayout? This is done in order to add the two buttons at the top without any nested layouts-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/shoe_name"
         android:layout_width="match_parent"

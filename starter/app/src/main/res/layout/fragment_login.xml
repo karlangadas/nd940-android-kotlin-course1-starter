@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.udacity.shoestore.LoginFragment">
 
+    <!-- Why constraintLayout? Although the distribution of the items inside of these layout is "linear". I wanted to aligned the width of the buttons with the editTextViews-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
