@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat.getSystemService
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
@@ -28,6 +29,7 @@ class LoginFragment : Fragment() {
         binding.buttonSignUp.setOnClickListener { view ->
             maybeNavigateToWelcomeFragment(view)
         }
+        (activity as AppCompatActivity).supportActionBar?.hide()
         return binding.root
     }
 

@@ -1,10 +1,9 @@
 package com.udacity.shoestore
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.LinearLayout
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.marginBottom
 import androidx.core.view.setMargins
 import androidx.databinding.DataBindingUtil
@@ -12,6 +11,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
+import androidx.navigation.ui.NavigationUI
 import com.udacity.shoestore.databinding.FragmentShoeListBinding
 import com.udacity.shoestore.databinding.ShoeItemBinding
 import com.udacity.shoestore.models.Shoe
@@ -45,6 +45,15 @@ class ShoeListFragment : Fragment() {
             view.findNavController()
                 .navigate(ShoeListFragmentDirections.actionShoeListFragmentToShoeDetailFragment())
         }
+        (activity as AppCompatActivity).supportActionBar?.let {
+            // https://stackoverflow.com/questions/16771532/removing-left-arrow-from-the-actionbar-in-android
+            it.setHomeButtonEnabled(false); // disable the button
+            it.setDisplayHomeAsUpEnabled(false); // remove the left caret
+            it.setDisplayShowHomeEnabled(false); // remove the icon
+            it.show()
+        }
+        setHasOptionsMenu(true)
+
         return binding.root
     }
 
@@ -68,5 +77,18 @@ class ShoeListFragment : Fragment() {
             }
 
         return shoeItemBinding.root
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.shoe_list_menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.logout -> requireView().findNavController()
+                .navigate(ShoeListFragmentDirections.actionShoeListFragmentToLoginFragment())
+        }
+        return super.onOptionsItemSelected(item)
     }
 }
